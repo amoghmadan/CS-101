@@ -21,8 +21,10 @@ class Prime:
         if self.number % 2 == 0:
             return False
 
-        for i in range(3, self.number, 2):
-            if self.number % i == 0:
+        initial = 3
+        while initial != self.number:
+            if self.number % initial == 0:
                 return False
+            initial += 2
 
         return True

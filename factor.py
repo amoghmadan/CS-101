@@ -7,6 +7,9 @@ class Factor:
         if not isinstance(number, int):
             raise ValueError("Expected type of number to be int")
 
+        if number < 1:
+            raise ValueError("Expected a posive int value")
+
         self.number = number
     
     def __iter__(self):
