@@ -12,23 +12,25 @@ class Armstrong:
     def __len__(self):
         """Get order"""
 
-        count = 0
-
-        copy = self.number
+        count, copy = 0, self.number
         while copy:
             copy //= 10
             count += 1
         
         return count
-    
-    def __call__(self):
-        """Get boolean check value"""
 
-        copy = self.number
-        order = len(self)
-        calculated = 0
+    @property
+    def calculated(self):
+        """Perform calculation"""
+
+        calculated, order, copy = 0, len(self), self.number
         while copy:
             calculated += (copy % 10) ** order
             copy //= 10
+
+        return calculated
+    
+    def __call__(self):
+        """Get boolean check value"""
         
-        return calculated == self.number
+        return self.calculated == self.number

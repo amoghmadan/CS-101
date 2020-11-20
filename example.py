@@ -1,5 +1,6 @@
 from armstrong import Armstrong
 from factor import Factor
+from factorial import Factorial
 from fibonacci import Fibonacci
 from palindrome import Palindrome
 from prime import Prime
@@ -18,3 +19,6 @@ print("Prime", is_prime())
 
 has_factors = Factor(23)
 print("Factors", has_factors())
+
+factorial = Factorial(6)
+print("Factorial", factorial())
