@@ -15,10 +15,8 @@ class Factorial:
     def __call__(self):
         """."""
 
-        calculated = 1
-        copy = self.number
+        calculated, copy = 1, self.number
         while copy:
             calculated *= copy
             copy -= 1
-
         return calculated

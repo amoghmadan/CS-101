@@ -12,13 +12,13 @@ class Prime:
 
         self.number = number
 
-    def __call__(self):
+    def __bool__(self):
         """Validate Number"""
 
         if self.number == 2:
             return True
         
-        if self.number % 2 == 0:
+        if self.number == 1 or self.number % 2 == 0:
             return False
 
         initial = 3

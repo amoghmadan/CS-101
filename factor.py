@@ -8,7 +8,7 @@ class Factor:
             raise ValueError("Expected type of number to be int")
 
         if number < 1:
-            raise ValueError("Expected a posive int value")
+            raise ValueError("Expected a positive int value")
 
         self.number = number
     
@@ -20,8 +20,3 @@ class Factor:
             if self.number % initial == 0:
                 yield initial
             initial += 1
-    
-    def __call__(self):
-        """Get collection"""
-
-        return tuple(i for i in self)

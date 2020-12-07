@@ -5,20 +5,14 @@ from fibonacci import Fibonacci
 from palindrome import Palindrome
 from prime import Prime
 
-is_armstrong = Armstrong(153)
-print("Armstrong", is_armstrong())
+print("Armstrong", bool(Armstrong(153)))
 
-fibonacci = Fibonacci(5)
-print("Fibonacci", fibonacci())
+print("Fibonacci", [i for i in Fibonacci(5)])
 
-is_palindrome = Palindrome(12321)
-print("Palindrome", is_palindrome())
+print("Palindrome", bool(Palindrome(12321)))
 
-is_prime = Prime(10007)
-print("Prime", is_prime())
+print("Prime", bool(Prime(10007)))
 
-has_factors = Factor(23)
-print("Factors", has_factors())
+print("Factors", [i for i in Factor(23)])
 
-factorial = Factorial(6)
-print("Factorial", factorial())
+print("Factorial", Factorial(6)())

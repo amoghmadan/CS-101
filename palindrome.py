@@ -16,10 +16,9 @@ class Palindrome:
         while copy:
             calculated = (calculated * 10) + (copy % 10)
             copy //= 10
-
         return calculated
     
-    def __call__(self):
+    def __bool__(self):
         """."""
         
         return self.number == reversed(self)

@@ -23,12 +23,9 @@ class Fibonacci:
     def __iter__(self):
         """Iterate to generate numbers until length reduces down to 0"""
 
-        while self.length:
-            yield self.first
-            self.first, self.second = self.second, self.first + self.second
-            self.length -= 1
-    
-    def __call__(self):
-        """Get collection"""
+        length, first, second = self.length, self.first, self.second
 
-        return tuple(i for i in self)
+        while length:
+            yield first
+            first, second = second, first + second
+            length -= 1
