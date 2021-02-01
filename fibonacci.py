@@ -1,20 +1,19 @@
-class Fibonacci:
+class Fibonacci(object):
     """Generate Fibonacci Numbers"""
 
     def __init__(self, length, first=0, second=1):
         """Set length and initials for the series"""
 
         if not isinstance(length, int):
-            raise ValueError("Expected length to be of type int")
-
+            raise TypeError("Expected length to be 'int' got '%s'" % (length.__class__.__name__, ))
         if length < 2:
-            raise ValueError("Length should be a minimum of 2")
+            raise ValueError("Expected length to be greater than 1")
 
-        if not (isinstance(first, int) or isinstance(first, float)):
-            raise ValueError("Expected type of first to be of int or float")
+        if not isinstance(first, int):
+            raise TypeError("Expected first to be 'int' got '%s'" % (first.__class__.__name__, ))
 
-        if not (isinstance(second, int) or isinstance(second, float)):
-            raise ValueError("Expected type of second to be of int or float")
+        if not isinstance(second, int):
+            raise TypeError("Expected second to be 'int' got '%s'" % (second.__class__.__name__, ))
 
         self.length = length
         self.first = first

@@ -1,11 +1,13 @@
-class Armstrong:
+class Armstrong(object):
     """Check Armstrong Number"""
 
     def __init__(self, number):
         """Set number"""
 
         if not isinstance(number, int):
-            raise ValueError("Expected number of type int")
+            raise TypeError("Expected number to be 'int' got '%s'" % (number.__class__.__name__, ))
+        if number < 1:
+            raise ValueError("Expected number to be greater than 0")
 
         self.number = number
     
@@ -14,8 +16,8 @@ class Armstrong:
 
         order, copy = 0, self.number
         while copy:
-            copy //= 10
             order += 1
+            copy //= 10
         return order
 
     @property
@@ -31,4 +33,4 @@ class Armstrong:
     def __bool__(self):
         """Get boolean check value"""
         
-        return self.calculated == self.number
+        return self.number == self.calculated

@@ -18,7 +18,7 @@ class Test(unittest.TestCase):
         self.assertEqual(bool(Armstrong(1634)), True)
         self.assertEqual(bool(Armstrong(151)), False)
         self.assertEqual(bool(Armstrong(1624)), False)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             bool(Armstrong(1.1))
 
     def test_palindrome(self):
